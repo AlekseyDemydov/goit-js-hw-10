@@ -39,9 +39,9 @@ function onInput(event) {
       infoEl.innerHTML = card(countries[0]);
       return;
     })
-    .catch(err => {
+    .catch(error => {
       clear();
-      Notify.failure('Oops, there is no country with that name', {
+      Notify.failure(error, {
         timeout: 400,
       });
     });

@@ -1,7 +1,7 @@
 const fetchCountries = name => {
   return fetch(`https://restcountries.com/v3.1/name/${name}`).then(response => {
-    if (response.status === 500) {
-      return Promise.reject(new Error());
+    if (!response.ok) {
+      throw 'Oops, there is no country with that name';
     }
     return response.json();
   });
