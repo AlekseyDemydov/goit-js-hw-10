@@ -1,17 +1,24 @@
-<div class="card">
-    <div class="flag">
-        <img src="{{flags.png}}" alt="{{name.official}}">
-    </div>
-    <div class="card-body">
-        <h2 class="card-text">Countrie:{{name.official}}</h2>
-        <h2 class="card-text">capital:{{capital}}</h2>
-        <h2 class="card-text">population:{{population}}</h2>
+    <div class="body-all">
+
+   <div class="body-name">
+        <img src="{{flags.png}}" alt="{{name.official}}" width="40" ;>
+        <h1 class="card-name">{{name.official}}</h1>
+   </div>
+  <div class="body-info"><h2 class="card-text">capital:</h2>
+       <p class="info"> {{capital}}</p></div>
+  <div class="body-info"><h2 class="card-text">population:</h2>
+       <p class="info"> {{population}}</p></div>
+        
+        
        
-<ul>
-    <h2>languages:</h2>
-    {{#each languages}}
-    <li>{{languages}}</li>
-     {{/each}}
-</ul>
-    </div>
+<div class="body-info">
+
+    <h2 class="card-text">languages:</h2>
+   <p class="info"> {{#each languages}}
+{{this}} {{#unless @last}}, {{/unless}}
+
+     {{/each}}</p>
 </div>
+    </div>
+
+    

@@ -1,14 +1,9 @@
-const urlLink = 'https://restcountries.com/v3.1/name';
-
 const fetchCountries = name => {
-  return fetch(
-    `${urlLink}/${name}?fields=name,capital,population,flags,languages`
-  ).then(response => {
-    if (response.status === 404) {
+  return fetch(`https://restcountries.com/v3.1/name/${name}`).then(response => {
+    if (response.status === 500) {
       return Promise.reject(new Error());
     }
     return response.json();
   });
 };
-
 export { fetchCountries };
